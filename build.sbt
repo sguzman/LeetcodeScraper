@@ -24,7 +24,7 @@ resolvers ++= Seq(
 
 /** Source Dependencies */
 libraryDependencies ++= Seq(
-  "org.jsoup" % "jsoup" % "1.11.1"
+  "com.mashape.unirest" % "unirest-java" % "1.4.9"
 )
 
 /** Make sure to fork on run */
