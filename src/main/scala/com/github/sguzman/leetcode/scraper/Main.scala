@@ -7,14 +7,18 @@ import com.mashape.unirest.http.{JsonNode, Unirest}
 object Main {
   def main(args: Array[String]): Unit = {
     val url = "https://leetcode.com/api/problems/all/"
+    val tups = Main.app(url)
 
+    tups.foreach(t => println(format(t)))
+  }
+
+  def app(url: String): Array[(Int, String)] = {
     val resp = Main.get(url)
     val l33t = Main.toLeetcode(resp)
     val stats = Main.toStats(l33t)
     val sorted = Main.sortById(stats)
-    val tups = Main.idAndTitle(sorted)
 
-    tups.foreach(t => println(format(t)))
+    Main.idAndTitle(sorted)
   }
 
   private def get(url: String): JsonNode = Unirest.get(url).asJson.getBody
