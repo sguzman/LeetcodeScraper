@@ -1,3 +1,4 @@
+![Scala](https://i.imgur.com/vBOMoBu.png)
 # LeetcodeScraper
 ![Travis](https://travis-ci.org/sguzman/LeetcodeScraper.svg?branch=master)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
