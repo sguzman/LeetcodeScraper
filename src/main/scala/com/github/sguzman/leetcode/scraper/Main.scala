@@ -7,13 +7,18 @@ import com.mashape.unirest.http.Unirest
 object Main {
   def main(args: Array[String]): Unit = {
     val url = "https://leetcode.com/api/problems/all/"
-    println(get(url))
+    get(url).foreach(t => println(format(t)))
   }
 
-  def get(url: String) = {
+  def get(url: String): Array[(Int, String)] = {
     val resp = Unirest.get(url).asJson.getBody
     val gson = new GsonBuilder().create
     val json = gson.fromJson(resp.toString, classOf[Leetcode])
-    json
+    val problems = json.stat_status_pairs.map(_.stat)
+    val sorted = problems.sortBy(_.question_id)
+    val zip = sorted.map(_.question_id).zip(sorted.map(_.question__title))
+    zip
   }
+
+  def format(t: (Int, String)): String = s"Leetcode ${t._1}. ${t._2}"
 }
