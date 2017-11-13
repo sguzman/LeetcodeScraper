@@ -24,7 +24,8 @@ resolvers ++= Seq(
 
 /** Source Dependencies */
 libraryDependencies ++= Seq(
-  "com.mashape.unirest" % "unirest-java" % "1.4.9"
+  "com.mashape.unirest" % "unirest-java" % "1.4.9",
+  "com.google.code.gson" % "gson" % "2.8.2"
 )
 
 /** Make sure to fork on run */
