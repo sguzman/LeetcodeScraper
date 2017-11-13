@@ -24,6 +24,7 @@ resolvers ++= Seq(
 
 /** Source Dependencies */
 libraryDependencies ++= Seq(
+  "org.jsoup" % "jsoup" % "1.11.1"
 )
 
 /** Make sure to fork on run */
