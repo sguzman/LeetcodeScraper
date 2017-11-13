@@ -31,5 +31,5 @@ object Main {
 
   private def idAndTitle(xs: Array[Stat]) = xs.map(_.question_id).zip(xs.map(_.question__title))
 
-  private def format(t: (Int, String)): String = s"Leetcode ${t._1}. ${t._2}"
+  def format(t: (Int, String)): String = s"Leetcode ${t._1}. ${t._2}"
 }
