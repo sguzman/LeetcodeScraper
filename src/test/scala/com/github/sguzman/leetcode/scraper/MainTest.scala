@@ -8,8 +8,10 @@ class MainTest extends FunSuite {
     val tups = Main.app(url)
 
     tups.foreach(t => {
-      val title = t._2
-      title.matches("""^Leetcode [1-9]+[0-9]*\. [A-Za-z0-9]$""")
+      val title = Main.format(t)
+      val p = "Leetcode ([1-9]+[0-9]*)\\. (.+)".r
+      val p(num, text) = title
+      val _ = num.toInt
     })
   }
 }
