@@ -26,7 +26,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "com.mashape.unirest" % "unirest-java" % "1.4.9",
   "com.google.code.gson" % "gson" % "2.8.2",
-  "org.scalatest" % "scalatest_2.12" % "3.2.0-SNAP9" % "test"
+  "org.scalatest" %% "scalatest" % "3.2.0-SNAP9" % "test"
 )
 
 /** Make sure to fork on run */
